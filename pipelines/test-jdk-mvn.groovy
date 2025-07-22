@@ -10,9 +10,9 @@ pipeline {
         stage('Verify Tools') {
             steps {
                 script {
-                    echo "\u001B[1;34m============================\u001B[0m"
-                    echo "\u001B[1;34m🔧 Stage: Verify Java and Maven\u001B[0m"
-                    echo "\u001B[1;34m============================\u001B[0m"
+                    echo "============================"
+                    echo "Stage: Verify Java and Maven"
+                    echo "============================"
                 }
                 echo "Checking Java Version..."
                 sh 'java -version'
@@ -21,7 +21,7 @@ pipeline {
                 sh 'mvn -version'
 
                 script {
-                    echo "\u001B[1;32m Tools verification completed successfully.\u001B[0m"
+                    echo "Tools verification completed successfully."
                 }
             }
         }
