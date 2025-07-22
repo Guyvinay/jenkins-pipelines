@@ -26,29 +26,29 @@ pipeline {
             }
         }
 
-        // stage('Verify GitHub Connection') {
-        //     steps {
-        //         script {
-        //             echo "=============================="
-        //             echo "Stage: Verify GitHub SSH Access"
-        //             echo "=============================="
-        //         }
+        stage('Verify GitHub Connection') {
+            steps {
+                script {
+                    echo "=============================="
+                    echo "Stage: Verify GitHub SSH Access"
+                    echo "=============================="
+                }
 
-        //         // Use ssh-agent with your GitHub SSH credentials
-        //         sshagent(credentials: ['git-ssh-key']) {
+                // Use ssh-agent with your GitHub SSH credentials
+                sshagent(credentials: ['git-ssh-key']) {
 
-        //             // Verify SSH authentication (does not clone or write to disk)
-        //             // Use the correct GitHub SSH URL of your repo
-        //             sh '''
-        //                 echo "Checking SSH access to GitHub..."
-        //                 git ls-remote git@github.com:Guyvinay/jenkins-pipelines.git
-        //             '''
-        //         }
+                    // Verify SSH authentication (does not clone or write to disk)
+                    // Use the correct GitHub SSH URL of your repo
+                    sh '''
+                        echo "Checking SSH access to GitHub..."
+                        git ls-remote git@github.com:Guyvinay/jenkins-pipelines.git
+                    '''
+                }
 
-        //         script {
-        //             echo "GitHub SSH access verified successfully."
-        //         }
-        //     }
-        // }
+                script {
+                    echo "GitHub SSH access verified successfully."
+                }
+            }
+        }
     }
 }
