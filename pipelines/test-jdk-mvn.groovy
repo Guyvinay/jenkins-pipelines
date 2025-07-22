@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'tool-jdk-21'
+        jdk 'tool-jdk-21a'
         maven 'tool-maven'
     }
 
