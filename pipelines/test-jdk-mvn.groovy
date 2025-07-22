@@ -10,7 +10,7 @@ pipeline {
         stage('Verify Tools') {
             steps {
                 echo "Checking Java and Maven installations..."
-                sh 'java -version'
+                sh 'java -versions'
                 sh 'mvn -version'
             }
         }
