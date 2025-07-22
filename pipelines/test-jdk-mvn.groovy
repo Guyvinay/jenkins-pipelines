@@ -6,10 +6,6 @@ pipeline {
         maven 'tool-maven'
     }
 
-    options {
-        ansiColor('xterm') // Enables ANSI color support
-    }
-
     stages {
         stage('Verify Tools') {
             steps {
